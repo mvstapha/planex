@@ -22,7 +22,7 @@ import Dashboard from "./pages/Dashboard";
 import DetailsRDV from "./pages/DetailsRDV";
 
 // Joudia
-import PolitiqueConfidentialite from "./pages/PolitiqueConfidentialite";
+import PrivacyPage from "./PrivacyPage";
 
 function App() {
   return (
