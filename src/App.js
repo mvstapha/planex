@@ -48,9 +48,8 @@ function App() {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/detailsRDV" element={<DetailsRDV />} />
 
-        {/* Joudia */}
-        <Route
-<Route path="/politique-confidentialite" element={<PrivacyPage />} />
+                {/* Joudia */}
+        <Route path="/politique-confidentialite" element={<PrivacyPage />} />
       </Routes>
     </BrowserRouter>
   );
