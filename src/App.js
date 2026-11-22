@@ -50,9 +50,7 @@ function App() {
 
         {/* Joudia */}
         <Route
-          path="/politique-confidentialite"
-          element={<PolitiqueConfidentialite />}
-        />
+<Route path="/politique-confidentialite" element={<PrivacyPage />} />
       </Routes>
     </BrowserRouter>
   );
