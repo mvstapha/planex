@@ -1,24 +1,60 @@
-import logo from './logo.svg';
-import './App.css';
+
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+// Ouiame
+import Accueil from "./pages/Accueil";
+import Fonctionnalites from "./pages/Fonctionnalites";
+
+// Marwa
+import Tarif from "./pages/Tarif";
+import FAQ from "./pages/FAQ";
+
+// Nouhaila
+import Contact from "./pages/Contact";
+import MentionsLegales from "./pages/MentionsLegales";
+
+// Asma Baquadir
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+
+// Achraf
+import Dashboard from "./pages/Dashboard";
+import DetailsRDV from "./pages/DetailsRDV";
+
+// Joudia
+import PolitiqueConfidentialite from "./pages/PolitiqueConfidentialite";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        {/* Ouiame */}
+        <Route path="/" element={<Accueil />} />
+        <Route path="/fonctionnalites" element={<Fonctionnalites />} />
+
+        {/* Marwa */}
+        <Route path="/tarifs" element={<Tarif />} />
+        <Route path="/faq" element={<FAQ />} />
+
+        {/* Nouhaila */}
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/mentions-legales" element={<MentionsLegales />} />
+
+        {/* Asma Baquadir */}
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+
+        {/* Achraf */}
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/detailsRDV" element={<DetailsRDV />} />
+
+        {/* Joudia */}
+        <Route
+          path="/politique-confidentialite"
+          element={<PolitiqueConfidentialite />}
+        />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
