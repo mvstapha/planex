@@ -7,7 +7,7 @@ import Fonctionnalites from "./pages/Fonctionnalites";
 
 // Marwa
 import Tarif from "./pages/Tarif";
-import FAQ from "./pages/FAQ";
+import Faq from "./pages/Faq";
 
 // Nouhaila
 import Contact from "./pages/Contact";
@@ -34,7 +34,7 @@ function App() {
 
         {/* Marwa */}
         <Route path="/tarifs" element={<Tarif />} />
-        <Route path="/faq" element={<FAQ />} />
+        <Route path="/faq" element={<Faq />} />
 
         {/* Nouhaila */}
         <Route path="/contact" element={<Contact />} />
