@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import NavGlobal from "../components/navbar/NavGlobal";
+import FooterGlobal from "../components/footer/FooterGlobal";
 import "./Contact.css";
 
 const SUJETS = [
@@ -34,7 +36,6 @@ export default function Contact() {
   const [values, setValues] = useState(INITIAL);
   const [errors, setErrors] = useState({});
   const [status, setStatus] = useState("idle"); // idle | sending | success | error
-  const [menuOpen, setMenuOpen] = useState(false);
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -67,29 +68,7 @@ export default function Contact() {
 
   return (
     <div className="ct-page">
-      {/* Navbar : remplacer par le composant Navbar commun quand il existera */}
-      <header className="ct-navbar">
-       <Link to="/" className="ct-logo" aria-label="Planex">
-  <img src="/logo-planex.png" alt="Planex" height="38" />
-</Link>
-        <button
-          className="ct-menu-btn"
-          aria-label="Ouvrir le menu"
-          aria-expanded={menuOpen}
-          aria-controls="ct-nav"
-          onClick={() => setMenuOpen((o) => !o)}
-        >
-          <span /><span /><span />
-        </button>
-        <nav id="ct-nav" className={menuOpen ? "open" : ""} aria-label="Navigation principale">
-          <Link to="/">Accueil</Link>
-          <Link to="/fonctionnalites">Fonctionnalités</Link>
-          <Link to="/tarifs">Tarifs</Link>
-          <Link to="/faq">FAQ</Link>
-          <Link to="/contact" aria-current="page">Contact</Link>
-        </nav>
-        <Link to="/login" className="ct-btn">Connexion</Link>
-      </header>
+      <NavGlobal />
 
       <section className="ct-hero">
         <div className="ct-hero-inner">
@@ -225,43 +204,7 @@ export default function Contact() {
         </aside>
       </main>
 
-      {/* Footer : remplacer par le composant Footer commun quand il existera */}
-      <footer className="ct-footer">
-        <div className="ct-f-grid">
-          <div className="ct-f-brand">
-            <Link to="/" className="ct-logo" aria-label="Planex">
-  <img src="/logo-planex-white.png" alt="Planex" height="46" />
-</Link>
-            <p>La secrétaire IA des cabinets médicaux : appels et rendez-vous gérés 24h/24, en darija et en français.</p>
-          </div>
-          <div>
-            <h4>Produit</h4>
-            <ul>
-              <li><Link to="/fonctionnalites">Fonctionnalités</Link></li>
-              <li><Link to="/tarifs">Tarifs</Link></li>
-              <li><Link to="/faq">FAQ</Link></li>
-            </ul>
-          </div>
-          <div>
-            <h4>Légal</h4>
-            <ul>
-              <li><Link to="/mentions-legales">Mentions légales</Link></li>
-              <li><Link to="/politique-confidentialite">Politique de confidentialité</Link></li>
-            </ul>
-          </div>
-          <div>
-            <h4>Contact</h4>
-            <ul>
-              <li><Link to="/contact">Nous écrire</Link></li>
-              <li><a href="mailto:privacy@planex.ma">privacy@planex.ma</a></li>
-            </ul>
-          </div>
-        </div>
-        <div className="ct-f-bottom">
-          <span>© 2026 Planex. Tous droits réservés.</span>
-          <span>Fait au Maroc</span>
-        </div>
-      </footer>
+      <FooterGlobal />
     </div>
   );
 }

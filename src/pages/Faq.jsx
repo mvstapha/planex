@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import NavGlobal from "../components/navbar/NavGlobal";
+import FooterGlobal from "../components/footer/FooterGlobal";
 import "./Faq.css";
 
 function Faq() {
@@ -33,6 +35,8 @@ function Faq() {
   ];
 
   return (
+    <>
+      <NavGlobal />
     <div className="faq-page">
       <div className="faq-header">
         <h1>Questions fréquentes</h1>
@@ -63,6 +67,8 @@ function Faq() {
         ))}
       </div>
     </div>
+    <FooterGlobal />
+    </>
   );
 }
 

@@ -1,29 +1,14 @@
 
 import { Link } from "react-router-dom";
+import NavGlobal from "../components/navbar/NavGlobal";
+import FooterGlobal from "../components/footer/FooterGlobal";
 import "./Accueil.css";
 
 function Accueil() {
   return (
     <div className="planex-home">
 
-      {/* NAVBAR */}
-      <nav className="home-navbar">
-        <Link to="/" className="home-logo">
-          <img src="/logo-planex.png" alt="Planex Logo" />
-        </Link>
-
-        <div className="home-links">
-          <Link to="/">Accueil</Link>
-          <Link to="/fonctionnalites">Fonctionnalités</Link>
-          <Link to="/tarifs">Tarifs</Link>
-          <Link to="/faq">FAQ</Link>
-          <Link to="/contact">Contact</Link>
-        </div>
-
-        <Link to="/login" className="home-login">
-          Se connecter
-        </Link>
-      </nav>
+      <NavGlobal />
 
       {/* HERO */}
       <section className="home-hero">
@@ -156,11 +141,7 @@ function Accueil() {
         </Link>
       </section>
 
-      {/* FOOTER */}
-      <footer className="home-footer">
-        <img src="/logo-planex.png" alt="Planex Logo" />
-        <p>© 2026 Planex. Tous droits réservés.</p>
-      </footer>
+      <FooterGlobal />
 
     </div>
   );

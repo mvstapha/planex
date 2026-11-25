@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import NavGlobal from "../components/navbar/NavGlobal";
+import FooterGlobal from "../components/footer/FooterGlobal";
 import "./MentionsLegales.css";
 
 // Les passages <span className="ml-todo"> sont à compléter avec les vraies informations de Planex.
@@ -96,7 +98,6 @@ const SECTIONS = [
 
 export default function MentionsLegales() {
   const [active, setActive] = useState(SECTIONS[0].id);
-  const [menuOpen, setMenuOpen] = useState(false);
 
   // Surligne la section active dans le sommaire
   useEffect(() => {
@@ -117,29 +118,7 @@ export default function MentionsLegales() {
 
   return (
     <div className="ml-page">
-      {/* Navbar : remplacer par le composant Navbar commun quand il existera */}
-      <header className="ml-navbar">
-        <Link to="/" className="ml-logo" aria-label="Planex">
-  <img src="/logo-planex.png" alt="Planex" height="38" />
-</Link>
-        <button
-          className="ml-menu-btn"
-          aria-label="Ouvrir le menu"
-          aria-expanded={menuOpen}
-          aria-controls="ml-nav"
-          onClick={() => setMenuOpen((o) => !o)}
-        >
-          <span /><span /><span />
-        </button>
-        <nav id="ml-nav" className={menuOpen ? "open" : ""} aria-label="Navigation principale">
-          <Link to="/">Accueil</Link>
-          <Link to="/fonctionnalites">Fonctionnalités</Link>
-          <Link to="/tarifs">Tarifs</Link>
-          <Link to="/faq">FAQ</Link>
-          <Link to="/contact">Contact</Link>
-        </nav>
-        <Link to="/login" className="ml-btn">Connexion</Link>
-      </header>
+      <NavGlobal />
 
       <section className="ml-hero">
         <div className="ml-hero-inner">
@@ -172,43 +151,7 @@ export default function MentionsLegales() {
         </article>
       </main>
 
-      {/* Footer : remplacer par le composant Footer commun quand il existera */}
-      <footer className="ml-footer">
-        <div className="ml-f-grid">
-          <div className="ml-f-brand">
-            <Link to="/" className="ml-logo" aria-label="Planex">
-  <img src="/logo-planex-white.png" alt="Planex" height="46" />
-</Link>
-            <p>La secrétaire IA des cabinets médicaux : appels et rendez-vous gérés 24h/24, en darija et en français.</p>
-          </div>
-          <div>
-            <h4>Produit</h4>
-            <ul>
-              <li><Link to="/fonctionnalites">Fonctionnalités</Link></li>
-              <li><Link to="/tarifs">Tarifs</Link></li>
-              <li><Link to="/faq">FAQ</Link></li>
-            </ul>
-          </div>
-          <div>
-            <h4>Légal</h4>
-            <ul>
-              <li><Link to="/mentions-legales">Mentions légales</Link></li>
-              <li><Link to="/politique-confidentialite">Politique de confidentialité</Link></li>
-            </ul>
-          </div>
-          <div>
-            <h4>Contact</h4>
-            <ul>
-              <li><Link to="/contact">Nous écrire</Link></li>
-              <li><a href="mailto:privacy@planex.ma">privacy@planex.ma</a></li>
-            </ul>
-          </div>
-        </div>
-        <div className="ml-f-bottom">
-          <span>© 2026 Planex. Tous droits réservés.</span>
-          <span>Fait au Maroc</span>
-        </div>
-      </footer>
+      <FooterGlobal />
     </div>
   );
 }

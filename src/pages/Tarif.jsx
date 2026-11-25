@@ -1,8 +1,12 @@
 import React from "react";
+import NavGlobal from "../components/navbar/NavGlobal";
+import FooterGlobal from "../components/footer/FooterGlobal";
 import "./Tarif.css";
 
 function Tarif() {
   return (
+    <>
+      <NavGlobal />
     <div className="tarif-page">
       <div className="tarif-header">
         <h1>Nos offres et tarifs</h1>
@@ -61,6 +65,8 @@ function Tarif() {
 
       </div>
     </div>
+    <FooterGlobal />
+    </>
   );
 }
 

@@ -1,29 +1,14 @@
 
 import { Link } from "react-router-dom";
+import NavGlobal from "../components/navbar/NavGlobal";
+import FooterGlobal from "../components/footer/FooterGlobal";
 import "./Fonctionnalites.css";
 
 function Fonctionnalites() {
   return (
     <div className="planex-features-page">
 
-      {/* NAVBAR */}
-      <nav className="features-navbar">
-        <Link to="/" className="features-logo">
-          <img src="/logo-planex.png" alt="Planex Logo" />
-        </Link>
-
-        <div className="features-links">
-          <Link to="/">Accueil</Link>
-          <Link to="/fonctionnalites" className="active">Fonctionnalités</Link>
-          <Link to="/tarifs">Tarifs</Link>
-          <Link to="/faq">FAQ</Link>
-          <Link to="/contact">Contact</Link>
-        </div>
-
-        <Link to="/login" className="features-login">
-          Se connecter
-        </Link>
-      </nav>
+      <NavGlobal />
 
       {/* HERO */}
       <section className="features-hero">
@@ -189,11 +174,7 @@ function Fonctionnalites() {
         </Link>
       </section>
 
-      {/* FOOTER */}
-      <footer className="features-footer">
-        <img src="/logo-planex.png" alt="Planex Logo" />
-        <p>© 2026 Planex. Tous droits réservés.</p>
-      </footer>
+      <FooterGlobal />
 
     </div>
   );

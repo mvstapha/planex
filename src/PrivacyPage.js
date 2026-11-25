@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import NavGlobal from "./components/navbar/NavGlobal";
+import FooterGlobal from "./components/footer/FooterGlobal";
 import "./PrivacyPage.css";
 
 const SECTIONS = [
@@ -165,7 +167,6 @@ const PLEDGES = [
 
 export default function PrivacyPage() {
   const [active, setActive] = useState(SECTIONS[0].id);
-  const [menuOpen, setMenuOpen] = useState(false);
 
   // Surligne la section active dans le sommaire
   useEffect(() => {
@@ -186,27 +187,7 @@ export default function PrivacyPage() {
 
   return (
     <div className="privacy-page">
-      <header className="pc-navbar">
-        <a href="/" className="pc-logo" aria-label="Planex">
-          <img src="/logo-planex.png" alt="Planex" />
-        </a>
-        <button
-          className="pc-menu-btn"
-          aria-label="Ouvrir le menu"
-          aria-expanded={menuOpen}
-          onClick={() => setMenuOpen(!menuOpen)}
-        >
-          <span></span><span></span><span></span>
-        </button>
-        <nav className={menuOpen ? "pc-nav open" : "pc-nav"} aria-label="Navigation principale">
-          <a href="/">Accueil</a>
-          <a href="/fonctionnalites">Fonctionnalités</a>
-          <a href="/tarifs">Tarifs</a>
-          <a href="/faq">FAQ</a>
-          <a href="/contact">Contact</a>
-        </nav>
-        <a href="/login" className="pc-btn">Connexion</a>
-      </header>
+      <NavGlobal />
 
       <section className="pc-hero">
         <div className="pc-hero-inner">
@@ -256,41 +237,7 @@ export default function PrivacyPage() {
         </article>
       </main>
 
-      <footer className="pc-footer">
-        <div className="pc-f-grid">
-          <div className="pc-f-brand">
-            <a href="/" className="pc-logo" aria-label="Planex">
-              <img src="/logo-planex-white.png" alt="Planex" />
-            </a>
-            <p>La secrétaire IA des cabinets médicaux : appels et rendez-vous gérés 24h/24, en darija et en français.</p>
-          </div>
-          <div>
-            <h4>Produit</h4>
-            <ul>
-              <li><a href="/fonctionnalites">Fonctionnalités</a></li>
-              <li><a href="/tarifs">Tarifs</a></li>
-              <li><a href="/faq">FAQ</a></li>
-            </ul>
-          </div>
-          <div>
-            <h4>Légal</h4>
-            <ul>
-              <li><a href="/mentions-legales">Mentions légales</a></li>
-              <li><a href="/politique-confidentialite">Politique de confidentialité</a></li>
-            </ul>
-          </div>
-          <div>
-            <h4>Contact</h4>
-            <ul>
-              <li><a href="/contact">Nous écrire</a></li>
-              <li><a href="mailto:privacy@planex.ma">privacy@planex.ma</a></li>
-            </ul>
-          </div>
-        </div>
-        <div className="pc-f-bottom">
-          <span>© 2026 Planex. Tous droits réservés.</span>
-        </div>
-      </footer>
+      <FooterGlobal />
     </div>
   );
 }

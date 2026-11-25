@@ -1,0 +1,89 @@
+/* ===== Footer global (pages publiques) ===== */
+
+.fg {
+  background: #000;
+  color: #fff;
+  padding: 56px 6vw 28px;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+}
+
+.fg-grid {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr 1fr;
+  gap: 40px;
+}
+
+.fg-logo {
+  display: inline-flex;
+  align-items: center;
+}
+
+.fg-logo img {
+  display: block;
+  height: 46px;
+  width: auto;
+}
+
+.fg-brand p {
+  margin-top: 14px;
+  max-width: 32ch;
+  font-size: 0.9rem;
+  color: #b8bfcc;
+  line-height: 1.6;
+}
+
+.fg h4 {
+  font-size: 0.95rem;
+  margin: 0 0 14px;
+  color: #14baae;
+}
+
+.fg ul {
+  list-style: none;
+  display: grid;
+  gap: 10px;
+  padding: 0;
+  margin: 0;
+}
+
+.fg ul a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.9rem;
+  opacity: 0.9;
+  transition: color 0.18s ease, opacity 0.18s ease;
+}
+
+.fg ul a:hover {
+  color: #14baae;
+  opacity: 1;
+}
+
+.fg-bottom {
+  max-width: 1100px;
+  margin: 40px auto 0;
+  padding-top: 22px;
+  border-top: 1px solid #222;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 0.82rem;
+  color: #9aa3b2;
+}
+
+/* --- Responsive --- */
+@media (max-width: 900px) {
+  .fg-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .fg-grid {
+    grid-template-columns: 1fr;
+  }
+}

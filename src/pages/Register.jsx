@@ -12,6 +12,8 @@ import {
   EyeOff,
   ArrowRight,
 } from "lucide-react";
+import NavGlobal from "../components/navbar/NavGlobal";
+import FooterGlobal from "../components/footer/FooterGlobal";
 
 const COLORS = {
   primary: "#1658f4",
@@ -137,6 +139,8 @@ export default function Register() {
   };
 
   return (
+    <>
+    <NavGlobal />
     <div
       style={{
         minHeight: "100vh",
@@ -462,5 +466,7 @@ export default function Register() {
         </div>
       </div>
     </div>
+    <FooterGlobal />
+    </>
   );
 }
