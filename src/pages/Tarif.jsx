@@ -1,3 +1,4 @@
+
 import React from "react";
 import NavGlobal from "../components/navbar/NavGlobal";
 import FooterGlobal from "../components/footer/FooterGlobal";
@@ -19,51 +20,60 @@ function Tarif() {
       <div className="tarif-container">
 
         <div className="tarif-card">
-          <h2>Simple</h2>
+          <h2>Starter</h2>
           <p className="tarif-description">Pour commencer</p>
-          <h3>Gratuit</h3>
+          <h3>Tarif à définir</h3>
 
           <ul>
-            <li>Gestion des appels</li>
-            <li>Prise de rendez-vous simple</li>
-            <li>Accès aux fonctionnalités de base</li>
+            <li>1 agent IA</li>
+            <li>1 numéro de téléphone</li>
+            <li>300 minutes par mois</li>
+            <li>Gestion des appels entrants</li>
+            <li>Prise de rendez-vous</li>
           </ul>
 
-          <button>Commencer</button>
+          <button>Choisir Starter</button>
         </div>
 
         <div className="tarif-card tarif-populaire">
           <span className="tarif-badge">Populaire</span>
           <h2>Pro</h2>
           <p className="tarif-description">Pour les professionnels</p>
-          <h3>199 DH <span>/ mois</span></h3>
+          <h3>Tarif à définir</h3>
 
           <ul>
-            <li>Gestion intelligente des appels</li>
-            <li>Prise de rendez-vous automatique</li>
-            <li>Gestion des patients</li>
-            <li>Support prioritaire</li>
+            <li>2 agents IA</li>
+            <li>1 000 minutes par mois</li>
+            <li>Rappels sortants</li>
+            <li>Gestion des rendez-vous</li>
+            <li>Intégration agenda externe</li>
           </ul>
 
           <button>Choisir Pro</button>
         </div>
 
         <div className="tarif-card">
-          <h2>Business</h2>
+          <h2>Clinique</h2>
           <p className="tarif-description">Pour les grandes structures</p>
-          <h3>499 DH <span>/ mois</span></h3>
+          <h3>Tarif à définir</h3>
 
           <ul>
-            <li>Toutes les fonctionnalités Pro</li>
+            <li>Agents IA multiples</li>
             <li>Gestion de plusieurs médecins</li>
-            <li>Statistiques avancées</li>
-            <li>Assistance personnalisée</li>
+            <li>API</li>
+            <li>Minutes sur mesure</li>
+            <li>Solution adaptée aux cliniques</li>
           </ul>
 
-          <button>Choisir Business</button>
+          <button>Choisir Clinique</button>
         </div>
 
       </div>
+
+      <p className="tarif-note">
+        Les minutes supplémentaires sont facturées à l'utilisation.
+        Essai gratuit ou démo limitée disponible.
+      </p>
     </div>
     <FooterGlobal />
     </>

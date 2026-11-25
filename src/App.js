@@ -18,9 +18,9 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 
 // Achraf
+// Achraf
 import Dashboard from "./pages/dashboard/Dashboard";
 import DetailsRDV from "./pages/detailsrdv/DetailsRDV";
-
 // Joudia
 import PrivacyPage from "./PrivacyPage";
 

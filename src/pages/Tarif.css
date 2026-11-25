@@ -137,3 +137,9 @@
   transform: translateY(-12px) scale(1.03);
   box-shadow: 0 12px 30px rgba(22, 88, 244, 0.15);
 }
+.tarif-note {
+  text-align: center;
+  color: #555;
+  margin-top: 45px;
+  font-size: 15px;
+}
