@@ -1,0 +1,139 @@
+.tarif-page {
+  min-height: 100vh;
+  background-color: #f2f6ff;
+  padding: 70px 40px;
+  font-family: "Poppins", sans-serif;
+}
+
+.tarif-header {
+  text-align: center;
+  margin-bottom: 55px;
+}
+
+.tarif-header h1 {
+  color: #1658f4;
+  font-size: 36px;
+  margin-bottom: 15px;
+}
+
+.tarif-header p {
+  color: #555;
+  font-size: 16px;
+}
+
+.tarif-container {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 25px;
+  max-width: 1150px;
+  margin: auto;
+}
+
+.tarif-card {
+  background-color: white;
+  width: 33.33%;
+  padding: 35px 25px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  position: relative;
+}
+
+.tarif-card h2 {
+  color: #1658f4;
+  font-size: 25px;
+}
+
+.tarif-description {
+  color: #777;
+  margin: 15px 0;
+}
+
+.tarif-card h3 {
+  color: #14bbae;
+  font-size: 30px;
+  margin: 25px 0;
+}
+
+.tarif-card h3 span {
+  color: #777;
+  font-size: 14px;
+}
+
+.tarif-card ul {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+  margin-bottom: 30px;
+}
+
+.tarif-card ul li {
+  padding: 12px 0;
+  color: #444;
+  border-bottom: 1px solid #eee;
+}
+
+.tarif-card ul li::before {
+  content: "✓";
+  color: #14bbae;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.tarif-card button {
+  background-color: #1658f4;
+  color: white;
+  border: none;
+  padding: 13px 30px;
+  border-radius: 8px;
+  font-size: 15px;
+  cursor: pointer;
+  width: 100%;
+  transition: 0.3s;
+}
+
+.tarif-card button:hover {
+  background-color: #14bbae;
+}
+
+.tarif-populaire {
+  border: 2px solid #1658f4;
+  transform: scale(1.04);
+}
+
+.tarif-badge {
+  background-color: #14bbae;
+  color: white;
+  padding: 7px 15px;
+  border-radius: 20px;
+  font-size: 12px;
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@media (max-width: 850px) {
+  .tarif-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .tarif-card {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .tarif-populaire {
+    transform: none;
+  }
+}
+.tarif-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tarif-card:hover {
+  transform: translateY(-12px) scale(1.03);
+  box-shadow: 0 12px 30px rgba(22, 88, 244, 0.15);
+}
