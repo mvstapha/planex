@@ -1,0 +1,29 @@
+.sb-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  border-radius: 999px;
+  font-size: 12.5px;
+  font-weight: 700;
+  line-height: 1.4;
+  white-space: nowrap;
+  text-transform: capitalize;
+  letter-spacing: 0.02em;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+.sb-badge::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: currentColor;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.5);
+}
+
+.sb-confirme   { color: #0e7c74; background: #d4f3ee; border: 1px solid #bfeee7; }
+.sb-en-attente { color: #9a6a00; background: #fdf0d0; border: 1px solid #f3e3b5; }
+.sb-honore     { color: #1658f4; background: #dde5ff; border: 1px solid #c9d6f7; }
+.sb-annule     { color: #c0262d; background: #fbd9db; border: 1px solid #f6cfd1; }
+.sb-absent     { color: #5b6472; background: #e8ebf2; border: 1px solid #d5d9e2; }

@@ -1,0 +1,106 @@
+/* ===== Carte KPI (glass, sans hover) ===== */
+
+.sc {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 22px 18px;
+  border-radius: 18px;
+  /* Fond glass : blanc max, un peu transparent */
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  box-shadow: 0 6px 24px rgba(22, 88, 244, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.75);
+  position: relative;
+  overflow: hidden;
+  /* Pas de transition hover */
+}
+
+/* Label centré en haut */
+.sc-label {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 600;
+  color: #4b5563;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+/* Ligne du bas : delta | valeur | icône */
+.sc-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  width: 100%;
+}
+
+.sc-value {
+  font-size: 34px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #111827;
+  line-height: 1;
+}
+
+.sc-suffix {
+  font-size: 15px;
+  font-weight: 600;
+  color: #9aa3b2;
+  margin-left: 2px;
+}
+
+/* Icône sans fond (juste la couleur) */
+.sc-icon {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+
+.sc-blue .sc-icon   { color: #1658f4; }
+.sc-teal .sc-icon   { color: #14baae; }
+.sc-red .sc-icon    { color: #c0262d; }
+.sc-amber .sc-icon  { color: #d97706; }
+
+/* Delta pill */
+.sc-delta {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  padding: 5px 10px;
+  border-radius: 999px;
+  font-size: 11.5px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.01em;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.sc-delta.up {
+  background: rgba(20, 186, 174, 0.15);
+  color: #0e7c74;
+  border: 1px solid rgba(20, 186, 174, 0.25);
+}
+
+.sc-delta.down {
+  background: rgba(192, 38, 45, 0.12);
+  color: #c0262d;
+  border: 1px solid rgba(192, 38, 45, 0.2);
+}
+
+/* --- Responsive --- */
+@media (max-width: 620px) {
+  .sc {
+    padding: 16px 14px;
+    gap: 12px;
+  }
+
+  .sc-value {
+    font-size: 28px;
+  }
+}
