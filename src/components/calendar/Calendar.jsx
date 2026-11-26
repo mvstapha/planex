@@ -1,3 +1,4 @@
+
 import { useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { ChevronLeft, ChevronRight, Clock, ArrowRight, CalendarX2 } from "lucide-react";
@@ -11,10 +12,10 @@ const JOURS = ["Lun", "Mar", "Mer", "Jeu", "Ven", "Sam", "Dim"];
 function Calendar({ rdvs = [], aujourdHui }) {
   const navigate = useNavigate();
 
-  // Date du jour (par dÃ©faut : aujourd'hui)
+  // Date du jour (par défaut : aujourd'hui)
   const todayISO = aujourdHui || toISODate(new Date());
 
-  // Jour sÃ©lectionnÃ© + mois affichÃ©
+  // Jour sélectionné + mois affiché
   const [jour, setJour] = useState(todayISO);
   const [vue, setVue] = useState(() => {
     const d = new Date(todayISO + "T12:00:00");
@@ -29,7 +30,7 @@ function Calendar({ rdvs = [], aujourdHui }) {
     }, {});
   }, [rdvs]);
 
-  // RDV du jour sÃ©lectionnÃ©, triÃ©s par heure
+  // RDV du jour sélectionné, triés par heure
   const rdvsDuJour = useMemo(() => {
     return rdvs
       .filter((r) => r.date === jour)
@@ -51,20 +52,20 @@ function Calendar({ rdvs = [], aujourdHui }) {
     year: "numeric",
   });
 
-  // Changer de mois (precedent / suivant)
+  // Changer de mois (précédent / suivant)
   function changerMois(delta) {
     const d = new Date(year, month + delta, 1);
     setVue({ year: d.getFullYear(), month: d.getMonth() });
   }
 
-  // Revenir Ã  aujourdhui
+  // Revenir à aujourd'hui
   function aujourdHuiClick() {
     setJour(todayISO);
     const d = new Date(todayISO + "T12:00:00");
     setVue({ year: d.getFullYear(), month: d.getMonth() });
   }
 
-  // Ouvrir le detail dun RDV
+  // Ouvrir le détail d'un RDV
   function ouvrirRdv(rdv) {
     navigate(`/detailsRDV?id=${rdv.id}`, { state: { rdv } });
   }
@@ -77,7 +78,7 @@ function Calendar({ rdvs = [], aujourdHui }) {
           <h2 className="cal-mois">{titreMois}</h2>
 
           <div className="cal-nav">
-            <button type="button" className="cal-arrow" onClick={() => changerMois(-1)} aria-label="Mois prÃ©cÃ©dent">
+            <button type="button" className="cal-arrow" onClick={() => changerMois(-1)} aria-label="Mois précédent">
               <ChevronLeft size={18} />
             </button>
             <button type="button" className="cal-today" onClick={aujourdHuiClick}>
@@ -127,7 +128,7 @@ function Calendar({ rdvs = [], aujourdHui }) {
         </div>
       </section>
 
-      {/* ===== Carte 2 : Rendez vous ===== */}
+      {/* ===== Carte 2 : Rendez-vous ===== */}
       <section className="cal-card cal-card--rdv">
         <div className="cal-list-head">
           <h3>{formatDateLongue(jour)}</h3>
@@ -137,7 +138,7 @@ function Calendar({ rdvs = [], aujourdHui }) {
         {rdvsDuJour.length === 0 ? (
           <div className="cal-empty-state">
             <CalendarX2 size={30} />
-            <p>Aucun rendez-vous ce jour-lÃ .</p>
+            <p>Aucun rendez-vous ce jour-là.</p>
             <small>Choisissez une autre date dans le calendrier.</small>
           </div>
         ) : (
@@ -151,10 +152,10 @@ function Calendar({ rdvs = [], aujourdHui }) {
                     <strong>{rdv.patient.nom}</strong>
                     <small>
                       {rdv.type}
-                      <span className="cal-sep">Â·</span>
+                      <span className="cal-sep">·</span>
                       <Clock size={12} />
                       {rdv.duree} min
-                      <span className="cal-sep">Â·</span>
+                      <span className="cal-sep">·</span>
                       {rdv.source}
                     </small>
                   </span>
@@ -162,7 +163,7 @@ function Calendar({ rdvs = [], aujourdHui }) {
                   <StatusRDV statut={rdv.statut} />
 
                   <span className="cal-rdv-go">
-                    DÃ©tails
+                    Détails
                     <ArrowRight size={15} />
                   </span>
                 </button>

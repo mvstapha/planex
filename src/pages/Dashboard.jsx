@@ -1,10 +1,9 @@
 import { PhoneCall, CalendarCheck, PhoneMissed, TrendingUp, Clock } from "lucide-react";
-import NavbarDashboard from "../../components/navbar/NavbarDashboard";
-import Sidebar from "../../components/sidebar/Sidebar";
-import StatCard from "../../components/stats/StatCard";
-import Calendar from "../../components/calendar/Calendar";
-import { kpis, TODAY, formatDateLongue, rdvDuJour, rendezVous } from "../../data";
-import "./Dashboard.css";
+import NavbarDashboard from "../components/navbar/NavbarDashboard";
+import Sidebar from "../components/sidebar/Sidebar";
+import StatCard from "../components/stats/StatCard";
+import Calendar from "../components/calendar/Calendar";
+import { kpis, TODAY, formatDateLongue, rdvDuJour, rendezVous } from "../data";
 
 const ICONES = {
   PhoneCall,

@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import NavGlobal from "../components/navbar/NavGlobal";
 import FooterGlobal from "../components/footer/FooterGlobal";
-import "./Faq.css";
 
 function Faq() {
   const [activeIndex, setActiveIndex] = useState(null);

@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import NavGlobal from "../components/navbar/NavGlobal";
 import FooterGlobal from "../components/footer/FooterGlobal";
-import "./MentionsLegales.css";
 
 // Les passages <span className="ml-todo"> sont à compléter avec les vraies informations de Planex.
 const SECTIONS = [

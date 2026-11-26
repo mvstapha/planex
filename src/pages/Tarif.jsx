@@ -2,7 +2,6 @@
 import React from "react";
 import NavGlobal from "../components/navbar/NavGlobal";
 import FooterGlobal from "../components/footer/FooterGlobal";
-import "./Tarif.css";
 
 function Tarif() {
   return (

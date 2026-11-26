@@ -16,14 +16,13 @@ import {
   AlertTriangle,
   History,
 } from "lucide-react";
-import NavbarDashboard from "../../components/navbar/NavbarDashboard";
-import Sidebar from "../../components/sidebar/Sidebar";
-import StatusRDV from "../../components/statutsrdv/StatusRDV";
-import { rdvParId, formatDateLongue, rendezVous } from "../../data";
-import "./DetailsRDV.css";
+import NavbarDashboard from "../components/navbar/NavbarDashboard";
+import Sidebar from "../components/sidebar/Sidebar";
+import StatusRDV from "../components/statutsrdv/StatusRDV";
+import { rdvParId, formatDateLongue, rendezVous } from "../data";
 
 /**
- * Page de dÃ©tail d'un rendez-vous.
+ * Page de détail d'un rendez-vous.
  *
  * - Lit l'id depuis l'URL (?id=...) ou le state de navigation.
  * - Affiche la fiche patient, les infos du RDV, l'historique, et des actions.
@@ -34,7 +33,7 @@ function DetailsRDV() {
   const location = useLocation();
 
   const id = params.get("id");
-  // RDV depuis le state (clic) ou depuis l'id (refresh) ou le premier par dÃ©faut
+  // RDV depuis le state (clic) ou depuis l'id (refresh) ou le premier par défaut
   const rdv = location.state?.rdv || rdvParId(id) || rendezVous[0];
 
   // Statut local (modifiable par les actions)
@@ -42,7 +41,7 @@ function DetailsRDV() {
   const [actionMsg, setActionMsg] = useState("");
   const [signale, setSignale] = useState(false);
 
-  // Historique du patient (autres RDV, triÃ©s du plus rÃ©cent au plus ancien)
+  // Historique du patient (autres RDV, triés du plus récent au plus ancien)
   const historique = rendezVous
     .filter((r) => r.patient.nom === rdv.patient.nom && r.id !== rdv.id)
     .sort((a, b) => (a.date + a.heure).localeCompare(b.date + b.heure))
@@ -51,16 +50,16 @@ function DetailsRDV() {
   // Actions locales (confirmer / annuler / reporter)
   function faireAction(type) {
     if (type === "confirmer") {
-      setStatut("confirmÃ©");
-      setActionMsg("Rendez-vous confirmÃ©.");
+      setStatut("confirmé");
+      setActionMsg("Rendez-vous confirmé.");
     } else if (type === "annuler") {
-      setStatut("annulÃ©");
-      setActionMsg("Rendez-vous annulÃ©.");
+      setStatut("annulé");
+      setActionMsg("Rendez-vous annulé.");
     } else if (type === "reporter") {
       setStatut("en attente");
-      setActionMsg("Rendez-vous reportÃ© â€” Ã  replanifier.");
+      setActionMsg("Rendez-vous reporté — à replanifier.");
     }
-    // Effacer le message aprÃ¨s 3s
+    // Effacer le message après 3s
     window.setTimeout(() => setActionMsg(""), 3000);
   }
 
@@ -78,13 +77,13 @@ function DetailsRDV() {
             Retour au dashboard
           </Link>
 
-          {/* En-tÃªte patient */}
+          {/* En-tête patient */}
           <header className="drv-head">
             <span className="drv-avatar">{rdv.patient.nom.charAt(0)}</span>
             <div className="drv-id">
               <h1>{rdv.patient.nom}</h1>
               <p>
-                {rdv.type} Â· {rdv.id}
+                {rdv.type} · {rdv.id}
               </p>
             </div>
             <StatusRDV statut={statut} />
@@ -106,7 +105,7 @@ function DetailsRDV() {
                 <li>
                   <Clock size={16} />
                   <span>
-                    {rdv.heure} Â· {rdv.duree} min
+                    {rdv.heure} · {rdv.duree} min
                   </span>
                 </li>
                 <li>
@@ -115,12 +114,12 @@ function DetailsRDV() {
                 </li>
                 <li>
                   <FileText size={16} />
-                  <span>{rdv.motif || "â€”"}</span>
+                  <span>{rdv.motif || "—"}</span>
                 </li>
                 <li>
                   <Globe size={16} />
                   <span>
-                    {rdv.langue === "fr" ? "FranÃ§ais" : "Darija"} Â· {rdv.source}
+                    {rdv.langue === "fr" ? "Français" : "Darija"} · {rdv.source}
                   </span>
                 </li>
               </ul>
@@ -146,7 +145,7 @@ function DetailsRDV() {
                 </li>
                 <li>
                   <Mail size={16} />
-                  <span>{rdv.patient.email || "â€”"}</span>
+                  <span>{rdv.patient.email || "—"}</span>
                 </li>
               </ul>
 
@@ -161,7 +160,7 @@ function DetailsRDV() {
                   type="button"
                   className="drv-btn drv-btn-ok"
                   onClick={() => faireAction("confirmer")}
-                  disabled={statut === "confirmÃ©" || statut === "honorÃ©"}
+                  disabled={statut === "confirmé" || statut === "honoré"}
                 >
                   <CheckCircle2 size={16} />
                   Confirmer
@@ -178,7 +177,7 @@ function DetailsRDV() {
                   type="button"
                   className="drv-btn drv-btn-danger"
                   onClick={() => faireAction("annuler")}
-                  disabled={statut === "annulÃ©"}
+                  disabled={statut === "annulé"}
                 >
                   <XCircle size={16} />
                   Annuler
@@ -210,9 +209,9 @@ function DetailsRDV() {
           </section>
 
           {/* Bouton "Signaler une erreur de l'agent" :
-              - Sert a signaler une erreur de l'assistant IA.
-              - Aide a ameliorer la reconnaissance et les reponses.
-              - Pour l'instant : juste un etat local (pas d'API). */}
+              - Sert à signaler une erreur de l'assistant IA.
+              - Aide à améliorer la reconnaissance et les réponses.
+              - Pour l'instant : juste un état local (pas d'API). */}
           <section className="drv-signal">
             <button
               type="button"
@@ -222,11 +221,11 @@ function DetailsRDV() {
             >
               <AlertTriangle size={16} />
               {signale
-                ? "Erreur signalÃ©e â€” merci"
+                ? "Erreur signalée — merci"
                 : "Signaler une erreur de l'agent"}
             </button>
             <small>
-              Aide Ã  amÃ©liorer la reconnaissance et les rÃ©ponses de l'assistant IA.
+              Aide à améliorer la reconnaissance et les réponses de l'assistant IA.
             </small>
           </section>
         </main>

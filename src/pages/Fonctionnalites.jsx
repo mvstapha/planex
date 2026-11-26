@@ -2,7 +2,6 @@
 import { Link } from "react-router-dom";
 import NavGlobal from "../components/navbar/NavGlobal";
 import FooterGlobal from "../components/footer/FooterGlobal";
-import "./Fonctionnalites.css";
 
 function Fonctionnalites() {
   return (

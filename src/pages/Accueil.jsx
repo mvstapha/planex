@@ -2,7 +2,7 @@
 import { Link } from "react-router-dom";
 import NavGlobal from "../components/navbar/NavGlobal";
 import FooterGlobal from "../components/footer/FooterGlobal";
-import "./Accueil.css";
+// import "../css/Accueil.css";
 
 function Accueil() {
   return (
@@ -13,10 +13,7 @@ function Accueil() {
       {/* HERO */}
       <section className="home-hero">
         <div className="hero-content">
-          <span className="hero-badge">
-            ✨ La gestion intelligente de vos rendez-vous
-          </span>
-
+          
           <h1>
             Gérez vos rendez-vous
             <span> simplement et intelligemment</span>

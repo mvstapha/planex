@@ -1,5 +1,7 @@
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import "./css/style.css"
+
 
 // Ouiame
 import Accueil from "./pages/Accueil";
@@ -19,10 +21,10 @@ import Register from "./pages/Register";
 
 // Achraf
 // Achraf
-import Dashboard from "./pages/dashboard/Dashboard";
-import DetailsRDV from "./pages/detailsrdv/DetailsRDV";
+import Dashboard from "./pages/Dashboard";
+import DetailsRDV from "./pages/DetailsRDV";
 // Joudia
-import PrivacyPage from "./PrivacyPage";
+import PrivacyPage from "./pages/PrivacyPage";
 
 function App() {
   return (

@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
-import NavGlobal from "./components/navbar/NavGlobal";
-import FooterGlobal from "./components/footer/FooterGlobal";
-import "./PrivacyPage.css";
+import NavGlobal from "../components/navbar/NavGlobal";
+import FooterGlobal from "../components/footer/FooterGlobal";
 
 const SECTIONS = [
   {
